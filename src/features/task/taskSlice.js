@@ -31,11 +31,22 @@ export const taskSlice = createSlice({
       // console.log("delete", idToRemove);
       return state.filter((items) => items.id !== idToRemove);
     },
+    editTask: (state, action) => {
+      console.log("edit", action.payload);
+      const idToEdit = action.payload.id;
+
+      return state.map((item) => {
+        if (item.id === idToEdit) {
+          return action.payload;
+        }
+        return item;
+      });
+    },
   },
 });
 
 // exportar las acciones que se puede realizara almacenadas en "actions" dentro del reducer
-export const { addTask, deleteTask } = taskSlice.actions;
+export const { addTask, deleteTask, editTask } = taskSlice.actions;
 
 // exporta unicamente reducer, necesario para el store
 export default taskSlice.reducer;
