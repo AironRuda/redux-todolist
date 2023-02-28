@@ -6,10 +6,6 @@ import { TaskForm, TaskList } from "./components";
 // useSelector -> selecciona informacion
 
 function App() {
-  // de todo el estado, solo espero el estado de las tareas "tasks"
-  const taskState = useSelector((state) => state.tasks);
-  console.log(taskState);
-
   return (
     <div className="App">
       <h1>Hello world</h1>
