@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { TaskForm, TaskList } from "./components";
 
 // useDispatch -> genera acciones
@@ -8,9 +9,12 @@ import { TaskForm, TaskList } from "./components";
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
-      <TaskForm />
-      <TaskList />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<TaskList />} />
+          <Route path="/create-task" element={<TaskForm />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
