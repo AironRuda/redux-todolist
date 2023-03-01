@@ -44,21 +44,27 @@ const TaskForm = () => {
     }
   }, []);
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}
+    className="bg-zinc-500 max-w-sm p-4">
+      <label htmlFor="title" className="block text-xs font-bold">Task: </label>
       <input
         type="text"
         name="title"
         placeholder="title"
         onChange={handleChange}
         value={task.title}
+        className="w-full p-2 rounded-md bg-zinc-600"
       />
+      <label htmlFor="" className="block text-xs font-bold">Description: </label>
       <textarea
         name="description"
         placeholder="description"
         onChange={handleChange}
         value={task.description}
+        className="w-full p-2 rounded-md bg-zinc-600"
+
       ></textarea>
-      <button>save</button>
+      <button className="bg-indigo-600 p-2 rounded-md">save</button>
     </form>
   );
 };
