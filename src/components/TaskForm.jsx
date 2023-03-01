@@ -38,11 +38,10 @@ const TaskForm = () => {
   };
 
   useEffect(() => {
-    // console.log(params);
     if (params.id) {
       setTask(tasks.find((item) => item.id === params.id));
     }
-  }, []);
+  }, [params.id, task]);
   return (
     <form onSubmit={handleSubmit}
     className="bg-zinc-500 max-w-sm p-4">
