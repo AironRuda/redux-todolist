@@ -32,7 +32,7 @@ export const taskSlice = createSlice({
       return state.filter((items) => items.id !== idToRemove);
     },
     editTask: (state, action) => {
-      console.log("edit", action.payload);
+      // console.log("edit", action.payload);
       const idToEdit = action.payload.id;
 
       return state.map((item) => {

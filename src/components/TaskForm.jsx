@@ -24,7 +24,6 @@ const TaskForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (params.id) {
       dispatch(editTask(task));
     } else {
@@ -39,7 +38,7 @@ const TaskForm = () => {
   };
 
   useEffect(() => {
-    console.log(params);
+    // console.log(params);
     if (params.id) {
       setTask(tasks.find((item) => item.id === params.id));
     }
